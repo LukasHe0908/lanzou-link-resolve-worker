@@ -5,3 +5,18 @@
 API 解析逻辑来自于：[lanzou-link-resolve](https://github.com/kzyqq00-Player/lanzou-link-resolve)
 
 **[API 文档](/docs/API.md)**
+
+## 部署
+
+开始前请确保电脑已安装 Node >= 20, 开启 corepack
+
+```bash
+# 安装依赖
+yarn install
+
+# 本地开发
+yarn dev
+
+# 编译（输出到 dist 文件夹）
+yarn deploy
+```
