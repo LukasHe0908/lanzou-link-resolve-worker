@@ -1,4 +1,4 @@
 # lanzou-link-resolve-worker
-A Cloudflare Worker version for [lanzou-link-resolve](https://github.com/kzyqq00-Player/lanzou-link-resolve).
+[lanzou-link-resolve](https://github.com/kzyqq00-Player/lanzou-link-resolve)的 Cloudflare Worker 版本。
 
-[API Docs](/docs/API.md)
+**[API 文档](/docs/API.md)**
