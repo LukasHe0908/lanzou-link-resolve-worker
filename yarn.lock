@@ -27,6 +27,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cloudflare/vitest-pool-workers@npm:^0.8.58":
+  version: 0.8.58
+  resolution: "@cloudflare/vitest-pool-workers@npm:0.8.58"
+  dependencies:
+    birpc: "npm:0.2.14"
+    cjs-module-lexer: "npm:^1.2.3"
+    devalue: "npm:^4.3.0"
+    miniflare: "npm:4.20250726.0"
+    semver: "npm:^7.7.1"
+    wrangler: "npm:4.26.1"
+    zod: "npm:^3.22.3"
+  peerDependencies:
+    "@vitest/runner": 2.0.x - 3.2.x
+    "@vitest/snapshot": 2.0.x - 3.2.x
+    vitest: 2.0.x - 3.2.x
+  checksum: 10c0/cf34e856984f537888b8ef7d2505cbfe14eb5a60d885e53ae910598fa1768dcb7c12f53ef674589088e6a853263fb3366578da3e17b077dfce2538f7ea11a630
+  languageName: node
+  linkType: hard
+
 "@cloudflare/workerd-darwin-64@npm:1.20250726.0":
   version: 1.20250726.0
   resolution: "@cloudflare/workerd-darwin-64@npm:1.20250726.0"
@@ -1056,6 +1075,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"birpc@npm:0.2.14":
+  version: 0.2.14
+  resolution: "birpc@npm:0.2.14"
+  checksum: 10c0/1acff3dab8c089410982ab086f7bb788840e51ef38ae68967962782df58f044ec2dddf4f9cc8027a4813a6ea7f8721a3ff0a1ac25ac4faff1dacea2cc3670039
+  languageName: node
+  linkType: hard
+
 "blake3-wasm@npm:2.1.5":
   version: 2.1.5
   resolution: "blake3-wasm@npm:2.1.5"
@@ -1163,6 +1189,13 @@ __metadata:
   version: 3.0.0
   resolution: "chownr@npm:3.0.0"
   checksum: 10c0/43925b87700f7e3893296c8e9c56cc58f926411cce3a6e5898136daaf08f08b9a8eb76d37d3267e707d0dcc17aed2e2ebdf5848c0c3ce95cf910a919935c1b10
+  languageName: node
+  linkType: hard
+
+"cjs-module-lexer@npm:^1.2.3":
+  version: 1.4.3
+  resolution: "cjs-module-lexer@npm:1.4.3"
+  checksum: 10c0/076b3af85adc4d65dbdab1b5b240fe5b45d44fcf0ef9d429044dd94d19be5589376805c44fb2d4b3e684e5fe6a9b7cf3e426476a6507c45283c5fc6ff95240be
   languageName: node
   linkType: hard
 
@@ -1282,6 +1315,13 @@ __metadata:
   version: 2.0.3
   resolution: "detect-libc@npm:2.0.3"
   checksum: 10c0/88095bda8f90220c95f162bf92cad70bd0e424913e655c20578600e35b91edc261af27531cf160a331e185c0ced93944bc7e09939143225f56312d7fd800fdb7
+  languageName: node
+  linkType: hard
+
+"devalue@npm:^4.3.0":
+  version: 4.3.3
+  resolution: "devalue@npm:4.3.3"
+  checksum: 10c0/f7217b6fa631b2e7f56697d3354645d2f028f0c0734fa6e09462e7889082da08e57a3504cb208b6b80ec79a3f249f4f9289064fd59c7bc419c9c8cd0592201f7
   languageName: node
   linkType: hard
 
@@ -1837,8 +1877,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "lanzou-link-resolve-worker@workspace:."
   dependencies:
+    "@cloudflare/vitest-pool-workers": "npm:^0.8.58"
     "@cloudflare/workers-types": "npm:^4.20250730.0"
     cheerio: "npm:^1.1.2"
+    marked: "npm:^16.1.1"
     typescript: "npm:^5.8.3"
     vitest: "npm:~3.2.4"
     wrangler: "npm:^4.26.1"
@@ -1891,6 +1933,15 @@ __metadata:
     promise-retry: "npm:^2.0.1"
     ssri: "npm:^12.0.0"
   checksum: 10c0/c40efb5e5296e7feb8e37155bde8eb70bc57d731b1f7d90e35a092fde403d7697c56fb49334d92d330d6f1ca29a98142036d6480a12681133a0a1453164cb2f0
+  languageName: node
+  linkType: hard
+
+"marked@npm:^16.1.1":
+  version: 16.1.1
+  resolution: "marked@npm:16.1.1"
+  bin:
+    marked: bin/marked.js
+  checksum: 10c0/1b02f1b9e82fe8fec1e1fd7d2f96ea19001bf535c8558f70dcb6e28c7afcd03f34095689484bbde600d00c33d5bb51b3f9b29932aee324751047e40f4d092a9c
   languageName: node
   linkType: hard
 
@@ -2322,6 +2373,15 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 10c0/fd603a6fb9c399c6054015433051bdbe7b99a940a8fb44b85c2b524c4004b023d7928d47cb22154f8d054ea7ee8597f586605e05b52047f048278e4ac56ae958
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.7.1":
+  version: 7.7.2
+  resolution: "semver@npm:7.7.2"
+  bin:
+    semver: bin/semver.js
+  checksum: 10c0/aca305edfbf2383c22571cb7714f48cadc7ac95371b4b52362fb8eeffdfbc0de0669368b82b2b15978f8848f01d7114da65697e56cd8c37b0dab8c58e543f9ea
   languageName: node
   linkType: hard
 
@@ -2904,7 +2964,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"wrangler@npm:^4.26.1":
+"wrangler@npm:4.26.1, wrangler@npm:^4.26.1":
   version: 4.26.1
   resolution: "wrangler@npm:4.26.1"
   dependencies:
@@ -3010,5 +3070,12 @@ __metadata:
   version: 3.22.3
   resolution: "zod@npm:3.22.3"
   checksum: 10c0/cb4b24aed7dec98552eb9042e88cbd645455bf2830e5704174d2da96f554dabad4630e3b4f6623e1b6562b9eaa43535a37b7f2011f29b8d8e9eabe1ddf3b656b
+  languageName: node
+  linkType: hard
+
+"zod@npm:^3.22.3":
+  version: 3.25.76
+  resolution: "zod@npm:3.25.76"
+  checksum: 10c0/5718ec35e3c40b600316c5b4c5e4976f7fee68151bc8f8d90ec18a469be9571f072e1bbaace10f1e85cf8892ea12d90821b200e980ab46916a6166a4260a983c
   languageName: node
   linkType: hard
