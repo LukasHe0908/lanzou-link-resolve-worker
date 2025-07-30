@@ -1,0 +1,21 @@
+{
+	"name": "lanzou-link-resolve-worker",
+	"version": "1.0.0",
+	"scripts": {
+		"deploy": "wrangler deploy --dry-run --minify --outdir ./dist",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+		"test": "vitest",
+		"cf-typegen": "wrangler types"
+	},
+	"dependencies": {
+		"cheerio": "^1.1.2"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20250730.0",
+		"typescript": "^5.8.3",
+		"vitest": "~3.2.4",
+		"wrangler": "^4.26.1"
+	},
+	"packageManager": "yarn@4.9.2"
+}
