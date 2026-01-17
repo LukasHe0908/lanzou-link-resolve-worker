@@ -119,7 +119,7 @@ async function getMoreInfoFromRedirectURL(
 		console.warn(warnMsg);
 
 		if (passCookie) {
-			throw new Error(`无法通过 Cookie 验证 (getMoreInfoFromRedirectURL): ${encryptArg} ${getAcwScV2(encryptArg)}`);
+			throw new Error(`无法通过 Cookie 验证 (getMoreInfoFromRedirectURL):${passCookie}, ${encryptArg} ${getAcwScV2(encryptArg)}`);
 		}
 		return getMoreInfoFromRedirectURL(url, getLength, cookie, [warnMsg]);
 	}
