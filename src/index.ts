@@ -9,6 +9,7 @@ export default {
 		}
 		const lanzouLink = url.searchParams.get('url');
 		const password = url.searchParams.get('pwd');
+		const desolveURL = url.searchParams.get('desolve') === '' || url.searchParams.get('desolve') === 'true' || false;
 		const getMore = url.searchParams.get('more') === '' || url.searchParams.get('more') === 'true' || false;
 		const downloadDirect = url.searchParams.get('direct') === '' || url.searchParams.get('direct') === 'true' || false;
 		const debug = url.searchParams.get('debug') === '' || url.searchParams.get('debug') === 'true' || false;
@@ -27,6 +28,7 @@ export default {
 			const resolver = new LinkResolver({
 				url: new URL(lanzouLink),
 				password: password || undefined,
+				solveURL: !desolveURL,
 				getLength: getMore,
 			});
 
@@ -69,7 +71,7 @@ export default {
 						'Content-Type': 'application/json',
 						'Access-Control-Allow-Origin': '*',
 					},
-				}
+				},
 			);
 		}
 	},
