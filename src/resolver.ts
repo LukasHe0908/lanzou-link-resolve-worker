@@ -30,7 +30,7 @@ function isEmpty(val: unknown) {
 
 function matchGroup(str: string, regex: RegExp, group = 1): string {
 	const match = str.match(regex);
-	if (!match || !match[group]) throw new Error(`正则匹配失败：${regex}`);
+	if (!match || typeof match[group] == 'undefined') throw new Error(`正则匹配失败：${regex}`);
 	return match[group];
 }
 
@@ -259,14 +259,13 @@ export class LinkResolver {
 
 		const iframeDoc = cheerio.load(iframeHTML);
 		const scriptContent = this.extractScript(iframeDoc);
-
 		const body = createAjaxmPHPBody({
 			action: 'downprocess',
 			sign: matchGroup(scriptContent, /wp_sign = '(.*?)'/),
 			signs: matchGroup(scriptContent, /ajaxdata = '(.*?)'/),
 			websign: matchGroup(scriptContent, /ciucjdsdc = '(.*?)'/),
 			websignkey: matchGroup(scriptContent, /ajaxdata = '(.*?)'/),
-			ves: matchGroup(scriptContent, /'ves':\s*([^,\n]+)/),
+			ves: matchGroup(scriptContent, /'ves':\s*([\d]+)/),
 			kd: matchGroup(scriptContent, /var\s+kdns\s*=\s*(\d+);/) || '0',
 		});
 
