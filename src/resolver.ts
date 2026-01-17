@@ -111,16 +111,16 @@ async function getMoreInfoFromRedirectURL(
 
 	const location = resp.headers.get('location');
 	if (!location) {
-		const warnMsg = '响应头中缺少 location, 需要 Cookie 验证 (getMoreInfoFromRedirectURL)';
-		console.warn(warnMsg);
-
-		if (passCookie) {
-			throw new Error('无法通过 Cookie 验证 (getMoreInfoFromRedirectURL)');
-		}
 		const html = await resp.text();
 		const encryptArg = html.match(/var arg1='(.+?)';/)![1];
 		const cookie = `acw_sc__v2=${getAcwScV2(encryptArg)}`;
-		console.log(encryptArg, getAcwScV2(encryptArg));
+
+		const warnMsg = `响应头中缺少 location, 需要 Cookie 验证 (getMoreInfoFromRedirectURL): ${encryptArg} ${getAcwScV2(encryptArg)}`;
+		console.warn(warnMsg);
+
+		if (passCookie) {
+			throw new Error(`无法通过 Cookie 验证 (getMoreInfoFromRedirectURL): ${encryptArg} ${getAcwScV2(encryptArg)}`);
+		}
 		return getMoreInfoFromRedirectURL(url, getLength, cookie, [warnMsg]);
 	}
 	const redirectedURL = new URL(location || '');
